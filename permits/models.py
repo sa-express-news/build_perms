@@ -7,4 +7,6 @@ class Permit(models.Model):
     worktype = models.CharField(max_length=7, null=True)
     address = models.TextField(null=True)
     declvltn = models.DecimalField(max_digits=14, decimal_places=2, null=True)
-    calcvltn = models.DecimalField(max_digits=14, decimal_places=2, null=True)  
+    calcvltn = models.DecimalField(max_digits=14, decimal_places=2, null=True)
+    temp_coodttm = models.DateField(auto_now=False, auto_now_add=False, null=True)
+      
