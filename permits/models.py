@@ -10,3 +10,6 @@ class Permit(models.Model):
     calcvltn = models.DecimalField(max_digits=14, decimal_places=2, null=True)
     temp_coodttm = models.DateField(auto_now=False, auto_now_add=False, null=True)
     coodttm = models.DateField(auto_now=False, auto_now_add=False, null=True)  
+    latitude = models.DecimalField(max_digits=10, decimal_places=7, null=True, blank=True)
+    longitude = models.DecimalField(max_digits=10, decimal_places=7, null=True, blank=True)
+    
