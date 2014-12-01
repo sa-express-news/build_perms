@@ -6,3 +6,4 @@ class Permit(models.Model):
     permit_type = models.CharField(max_length=255, null=True)
     worktype = models.CharField(max_length=7, null=True)
     address = models.TextField(null=True)
+    declvltn = models.DecimalField(max_digits=14, decimal_places=2, null=True)
