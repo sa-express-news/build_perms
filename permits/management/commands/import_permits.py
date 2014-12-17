@@ -10,7 +10,7 @@ class Command(BaseCommand):
         counter = 1
         filepath = os.path.join( os.path.dirname ( __file__), os.path.pardir, os.path.pardir, 'data')
         
-        permits_csv = open(os.path.join(filepath, 'permits.csv'))
+        permits_csv = open(os.path.join(filepath, 'permits_03_07.csv'))
         permits = csv.DictReader(permits_csv)
 
         for permit in permits:
@@ -22,7 +22,13 @@ class Command(BaseCommand):
             if record.coodttm == "":
                 record.coodttm = None
 
-            print("saving new permit %s of 44,778") % counter
+            # if record.latitude == "":
+            #     record.latitude = None
+
+            # if record.longitude == "":
+            #     record.longitude = None
+
+            print("saving new permit %s of 54,399") % counter
             record.save()
             counter += 1
                 
