@@ -15,7 +15,7 @@ class Permit(models.Model):
     geocode_accuracy = models.CharField(max_length=255, null=True)
 
 class Applicant(models.Model):
-    apno = models.CharField(max_length=12, unique=True)
+    apno = models.CharField(max_length=12)
     permit_nr = models.ForeignKey(Permit, to_field='permit_nr', null=True)
     aplty = models.CharField(max_length=3, null=True, blank=True)
     prim = models.CharField(max_length=3, null=True, blank=True)
