@@ -16,6 +16,7 @@ class Permit(models.Model):
 
 class Applicant(models.Model):
     apno = models.ForeignKey(Permit, to_field='permit_nr')
-    aplty = models.CharField(max_length=3, null=True)
+    aplty = models.CharField(max_length=3, null=True, blank=True)
     prim = models.CharField(max_length=3, null=True, blank=True)
+    capacity = models.CharField(max_length=5, null=True, blank=True)
     
