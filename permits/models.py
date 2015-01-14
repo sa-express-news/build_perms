@@ -20,4 +20,4 @@ class Applicant(models.Model):
     prim = models.CharField(max_length=3, null=True, blank=True)
     capacity = models.CharField(max_length=15, null=True, blank=True)
     capother = models.CharField(max_length=15, null=True, blank=True)
-    nm = models.TextField(null=True)
+    nm = models.CharField(max_length=255, null=True, blank=True)
