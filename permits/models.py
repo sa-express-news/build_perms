@@ -18,5 +18,6 @@ class Applicant(models.Model):
     apno = models.ForeignKey(Permit, to_field='permit_nr')
     aplty = models.CharField(max_length=3, null=True, blank=True)
     prim = models.CharField(max_length=3, null=True, blank=True)
-    capacity = models.CharField(max_length=5, null=True, blank=True)
+    capacity = models.CharField(max_length=15, null=True, blank=True)
     capother = models.CharField(max_length=15, null=True, blank=True)
+    nm = models.TextField(null=True)
