@@ -23,3 +23,4 @@ class Applicant(models.Model):
     capother = models.CharField(max_length=15, null=True, blank=True)
     nm = models.CharField(max_length=255, null=True, blank=True)
     dbaname = models.CharField(max_length=255, null=True, blank=True)
+    
