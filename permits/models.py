@@ -23,4 +23,10 @@ class Applicant(models.Model):
     capother = models.CharField(max_length=15, null=True, blank=True)
     nm = models.CharField(max_length=255, null=True, blank=True)
     dbaname = models.CharField(max_length=255, null=True, blank=True)
+
+class Zoning(models.Model):
+    apno = models.CharField(max_length=12)
+    zoning = models.CharField(max_length=8, null=True, blank=True)
+    descript = models.CharField(max_length=255, null=True, blank=True)
+    permit_nr = models.ForeignKey(Permit, to_field='permit_nr', null=True)
     
