@@ -1,4 +1,4 @@
-from django.db import models
+from django.contrib.gis.db import models
 
 class Permit(models.Model):
     permit_nr = models.CharField(max_length=12, unique=True)
@@ -13,6 +13,7 @@ class Permit(models.Model):
     latitude = models.DecimalField(max_digits=10, decimal_places=7, null=True, blank=True)
     longitude = models.DecimalField(max_digits=10, decimal_places=7, null=True, blank=True)
     geocode_accuracy = models.CharField(max_length=255, null=True)
+    perm_point = models.PointField(null=True)
 
 class Applicant(models.Model):
     apno = models.CharField(max_length=12)
