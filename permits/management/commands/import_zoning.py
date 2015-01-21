@@ -7,7 +7,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         counter = 1
         filepath = os.path.join( os.path.dirname ( __file__ ), '..', '..', 'data' )
-        zoning_csv = open(os.path.join(filepath, 'permits_03_07_excel', 'zoning_03_07.csv'))
+        zoning_csv = open(os.path.join(filepath, 'zoning.csv'))
         zonings = csv.DictReader(zoning_csv)
 
         for zoning in zonings:
