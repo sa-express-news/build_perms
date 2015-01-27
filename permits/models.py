@@ -30,4 +30,38 @@ class Zoning(models.Model):
     zoning = models.CharField(max_length=8, null=True, blank=True)
     descript = models.CharField(max_length=255, null=True, blank=True)
     permit_nr = models.ForeignKey(Permit, to_field='permit_nr', null=True)
-    
+
+class BexarTractsPop10(models.Model):
+    #regular Django fields corresponding the attributes in the shapefile
+    statefp10 = models.CharField(max_length=2, null=True, blank=True)
+    countyfp10 = models.CharField(max_length=3, null=True, blank=True)
+    tractce10 = models.CharField(max_length=6, null=True, blank=True)
+    geoid10 = models.CharField(max_length=11, null=True, blank=True)
+    name10 = models.CharField(max_length=7, null=True, blank=True)
+    namelsad10 = models.CharField(max_length=20, null=True, blank=True)
+    mtfcc10 = models.CharField(max_length=5, null=True, blank=True)
+    funcstat10 = models.CharField(max_length=1, null=True, blank=True)
+    aland10 = models.FloatField(null=True, blank=True)
+    awater10 = models.FloatField(null=True, blank=True)
+    intptlat10 = models.CharField(max_length=11, null=True, blank=True)
+    intptlon10 = models.CharField(max_length=12, null=True, blank=True)
+    sumlev = models.CharField(max_length=254, null=True, blank=True)
+    state = models.CharField(max_length=254, null=True, blank=True)
+    county = models.CharField(max_length=254, null=True, blank=True)
+    cbsa = models.CharField(max_length=254, null=True, blank=True)
+    csa = models.CharField(max_length=254, null=True, blank=True)
+    necta = models.CharField(max_length=254, null=True, blank=True)
+    cnecta = models.CharField(max_length=254, null=True, blank=True)
+    name = models.CharField(max_length=254, null=True, blank=True)
+    pop100 = models.CharField(max_length=254, null=True, blank=True)
+    hu100 = models.CharField(max_length=254, null=True, blank=True)
+    pop100_20 = models.CharField(max_length=254, null=True, blank=True)
+    hu100_200 = models.CharField(max_length=254, null=True, blank=True)
+    p001001 = models.CharField(max_length=254, null=True, blank=True)
+    p001001_2 = models.CharField(max_length=254, null=True, blank=True)
+
+    #geoDjango specific: geometry field (MultiPolygonField)
+    #overriding the default manager with GeoManager instance
+
+    mpoly = models.MultiPolygonField()
+    objects = models.GeoManager()
