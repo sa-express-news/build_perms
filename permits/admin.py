@@ -1,3 +1,4 @@
-from django.contrib import admin
+from django.contrib.gis import admin 
+from models import BexarTractsPop10
 
-# Register your models here.
+admin.site.register(BexarTractsPop10, admin.GeoModelAdmin)
