@@ -65,3 +65,17 @@ class BexarTractsPop10(models.Model):
 
     mpoly = models.MultiPolygonField()
     objects = models.GeoManager()
+
+class CouncilDistrictsPrior(models.Model):
+    district = models.FloatField(null=True, blank=True)
+    name = models.CharField(max_length=35, null=True, blank=True)
+    acres = models.FloatField(null=True, blank=True)
+    web = models.CharField(max_length=50, null=True, blank=True)
+    sq_miles = models.IntegerField(null=True, blank=True)
+    shape_leng = models.FloatField(null=True, blank=True)
+    shape_area = models.FloatField(null=True, blank=True)
+
+    mpoly = models.MultiPolygonField()
+    objects = models.GeoManager()
+
+    
