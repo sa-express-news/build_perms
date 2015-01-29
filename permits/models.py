@@ -78,4 +78,21 @@ class CouncilDistrictsPrior(models.Model):
     mpoly = models.MultiPolygonField()
     objects = models.GeoManager()
 
-    
+class CouncilDistrictsPost(models.Model):
+    district = models.FloatField()
+    name = models.CharField(max_length=35)
+    sqmiles = models.IntegerField()
+    shape_leng = models.FloatField()
+    shape_area = models.FloatField()
+    geom = models.MultiPolygonField(srid=4326)
+    objects = models.GeoManager()
+
+# Auto-generated `LayerMapping` dictionary for CouncilDistrictsPost model
+councildistrictspost_mapping = {
+    'district' : 'District',
+    'name' : 'Name',
+    'sqmiles' : 'SqMiles',
+    'shape_leng' : 'Shape_Leng',
+    'shape_area' : 'Shape_Area',
+    'geom' : 'MULTIPOLYGON',
+}
