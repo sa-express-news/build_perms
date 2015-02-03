@@ -15,6 +15,7 @@ class Permit(models.Model):
     geocode_accuracy = models.CharField(max_length=255, null=True)
     perm_point = models.PointField(null=True)
 
+
 class Applicant(models.Model):
     apno = models.CharField(max_length=12)
     permit_nr = models.ForeignKey(Permit, to_field='permit_nr', null=True)
@@ -79,7 +80,6 @@ class CouncilDistrictsPrior(models.Model):
     objects = models.GeoManager()
 
 # This is an auto-generated Django model module created by ogrinspect.
-from django.contrib.gis.db import models
 
 class CouncilDistrictsPost(models.Model):
     district = models.FloatField()
@@ -87,5 +87,5 @@ class CouncilDistrictsPost(models.Model):
     sqmiles = models.IntegerField()
     shape_leng = models.FloatField()
     shape_area = models.FloatField()
-    geom = models.MultiPolygonField(srid=4326)
+    geom = models.MultiPolygonField(srid=2238)
     objects = models.GeoManager()
