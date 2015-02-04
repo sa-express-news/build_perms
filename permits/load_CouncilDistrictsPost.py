@@ -12,9 +12,9 @@ councildistrictspost_mapping = {
     'geom' : 'MULTIPOLYGON',
 }
 
-shp = os.path.abspath(os.path.join(os.path.dirname(__file__), 'data/shp_files/city_of_sa_council_districts_post_11_27_12/sCoSACouncilDistrictsWGS84/sCoSACouncilDistrictsWGS84.shp'))
+shp = os.path.abspath(os.path.join(os.path.dirname(__file__), 'data/shp_files/city_of_sa_council_districts_post_11_27_12/post_wgs84/post_wgs84.shp'))
 
 def run(verbose=True):
-    lm = LayerMapping(CouncilDistrictsPost, shp, councildistrictspost_mapping, transform=False, encoding='iso-8859-1')
+    lm = LayerMapping(CouncilDistrictsPost, shp, councildistrictspost_mapping, source_srs=4326, transform=False, encoding='iso-8859-1')
     lm.save(strict=True, verbose=verbose)
     
