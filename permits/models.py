@@ -87,5 +87,6 @@ class CouncilDistrictsPost(models.Model):
     sqmiles = models.IntegerField()
     shape_leng = models.FloatField()
     shape_area = models.FloatField()
-    geom = models.MultiPolygonField(srid=2238)
+    geom = models.MultiPolygonField(srid=4326)
     objects = models.GeoManager()
+
