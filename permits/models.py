@@ -76,7 +76,7 @@ class CouncilDistrictsPrior(models.Model):
     shape_leng = models.FloatField(null=True, blank=True)
     shape_area = models.FloatField(null=True, blank=True)
 
-    mpoly = models.MultiPolygonField()
+    geom = models.MultiPolygonField(srid=4326)
     objects = models.GeoManager()
 
 # This is an auto-generated Django model module created by ogrinspect.
@@ -89,4 +89,24 @@ class CouncilDistrictsPost(models.Model):
     shape_area = models.FloatField()
     geom = models.MultiPolygonField(srid=4326)
     objects = models.GeoManager()
+
+class ShapePermit(models.Model):
+    permit_nr = models.CharField(max_length=254)
+    permit_dat = models.CharField(max_length=254)
+    permit_typ = models.CharField(max_length=254)
+    worktype = models.CharField(max_length=254)
+    address = models.CharField(max_length=254)
+    declvltn = models.FloatField()
+    calcvltn = models.FloatField()
+    temp_coodt = models.CharField(max_length=254)
+    coodttm = models.CharField(max_length=254)
+    latitude = models.FloatField()
+    longitude = models.FloatField()
+    geocode_ac = models.CharField(max_length=254)
+    geom = models.MultiPointField(srid=4326)
+    objects = models.GeoManager()
+
+
+
+
 
