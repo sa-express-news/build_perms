@@ -5,24 +5,30 @@ from django.shortcuts import render
 
 from permits.models import ShapePermit, CouncilDistrictsPost, CouncilDistrictsPrior
 
-def index(request):
-    tot_post_permits = []
+def get_permits_by_year_by_district_post():
+    post_permits_by_year_by_district = {}
     years_prior = range(2003,2013)
     years_post = range(2012,2015)
 
     post_dists = CouncilDistrictsPost.objects.all()
 
     for dist in post_dists:
-        print(dist.name)
+        post_permits_by_year_by_district[dist.name] = {}   
         for year in years_post:
-            print(year)
-            start_date = "2012-01-01"
-            end_date = "2012-12-31"
-            ShapePermit.objects.filter(geom__within=dist.geom).filter(permit_dat__range=(start_date,end_date))
+            post_permits_by_year_by_district[dist.name].update
+
+            start_date = "%d-01-01" % year
+            end_date = "%d-12-31" % year
+            permit_count = len(ShapePermit.objects.filter(geom__within=dist.geom).filter(permit_dat__range=(start_date,end_date)))
+
+            post_permits_by_year_by_district[dist.name].update({year:permit_count})
+
+    return post_permits_by_year_by_district
 
 
-    print(years_prior[0])
+def index(request):
+
     template = loader.get_template('permits/index.html')
-    context = {'post_tots': tot_post_permits}
+    context = {'post_tots': get_permits_by_year_by_district_post()}
 
     return render(request, 'permits/index.html', context) 

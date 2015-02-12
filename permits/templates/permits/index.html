@@ -1,5 +1,10 @@
-{% if years %}
-    {% for y in years %}
-        <p>{{ y }}</p>
+{% if post_tots %}
+    <div><b>Districts 2012-2014</b></div>
+    {% for key,values in post_tots.items %}
+    <p>{{ key }}</p>
+        {% for k,v in values.items %}
+        <p style="margin-left:20px;">Year: {{ k }} </p> 
+        <p style="margin-left:20px;">Number of permits issued: {{ v }}</p>
+        {% endfor %}
     {%  endfor %} 
 {% endif %}       
