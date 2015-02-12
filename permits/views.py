@@ -42,7 +42,6 @@ def get_permits_by_year_by_district_prior():
 
             prior_permits_by_year_by_district[dist.name].update({year:permit_count})
 
-    print(prior_permits_by_year_by_district)
 
     return prior_permits_by_year_by_district
 
@@ -53,6 +52,6 @@ def index(request):
     get_permits_by_year_by_district_prior()
 
     template = loader.get_template('permits/index.html')
-    context = {'post_tots': get_permits_by_year_by_district_post()}
+    context = {'post_tots': get_permits_by_year_by_district_post(), 'prior_tots': get_permits_by_year_by_district_prior() }
 
     return render(request, 'permits/index.html', context) 
