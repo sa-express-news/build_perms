@@ -169,6 +169,9 @@ class AppraisalData(models.Model):
     priorag_mkt = models.CharField(max_length=255, blank=True)
     priormktval = models.CharField(max_length=255, blank=True)
     bpplate_rend_penalty = models.CharField(max_length=255, blank=True)
+    latitude = models.DecimalField(max_digits=10, decimal_places=7, null=True, blank=True)
+    longitude = models.DecimalField(max_digits=10, decimal_places=7, null=True, blank=True)
+    geocode_accuracy = models.CharField(max_length=255, null=True)
 
 
 
