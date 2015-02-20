@@ -1,7 +1,7 @@
 <div style="height:auto; width:1000px;">
     <div style="border-right:solid; width:300px; float:left;">
     {% if post_tots %}
-        <div><b>Districts and Permit Counts 2012-2014</b></div>
+        <div><b>Districts and Permit Counts 2013-2014</b></div>
         {% for key,values in post_tots.items %}
         <p>{{ key }}</p>
             {% for k,v in values.items %}
@@ -11,14 +11,28 @@
         {%  endfor %} 
     {% endif %}       
     </div>
-    <div style="float:left;margin-left:10px;">
+    <div style="float:left;margin-left:10px; border-right:solid;">
         {% if prior_tots %}
-        <div style="width:300px;"><b>Districts and Permit Counts 2003-2013</b></div>
+        <div style="width:300px;"><b>Districts and Permit Counts 2003-2012</b></div>
             {% for key, values in prior_tots.items %}
             <p>{{ key }}</p>
                 {% for k,v in values.items %}
                 <p style="margin-left:20px;">Year: {{ k }}</p>
                 <p style="margin-left:20px;">Number of permits issued: {{ v }}</p>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div style="float:left;margin-left:10px">
+        {% if amts %}
+        <div style="width:300px;"><b>Amount Totals 2003-2012</b></div>
+            {% for key, values in amts.items %}
+            <p>{{ key }}</p>
+                {% for k,v in values.items %}
+                    <p style="margin-left:20px;"> {{ k }}</p>
+                    {% for k,v in v.items %}
+                        <p style="margin-left:30px;">{{ v }}</p>
+                    {% endfor %}
                 {% endfor %}
             {% endfor %}
         {% endif %}
