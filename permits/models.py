@@ -152,6 +152,7 @@ class AppraisalData(models.Model):
     legaldesc = models.CharField(max_length=255, blank=True)
     situs_zip = models.CharField(max_length=255, blank=True)
     num_unitn = models.CharField(max_length=255, blank=True)
+    last_deed_date = models.CharField(max_length=255,blank=True)
     agent_id = models.CharField(max_length=255, blank=True)
     agent_name = models.CharField(max_length=255, blank=True)
     agent_addr_l1 = models.CharField(max_length=255, blank=True)
@@ -172,6 +173,7 @@ class AppraisalData(models.Model):
     latitude = models.DecimalField(max_digits=10, decimal_places=7, null=True, blank=True)
     longitude = models.DecimalField(max_digits=10, decimal_places=7, null=True, blank=True)
     geocode_accuracy = models.CharField(max_length=255, null=True)
+    city = models.CharField(max_length=255, null=True)
 
 
 
