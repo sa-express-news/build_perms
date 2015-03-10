@@ -173,7 +173,6 @@ class AppraisalData(models.Model):
     latitude = models.DecimalField(max_digits=10, decimal_places=7, null=True, blank=True)
     longitude = models.DecimalField(max_digits=10, decimal_places=7, null=True, blank=True)
     geocode_accuracy = models.CharField(max_length=255, null=True)
-    city = models.CharField(max_length=255, null=True)
 
 
 
